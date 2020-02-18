@@ -16,6 +16,8 @@ async function calculate(){
     let res = await fetch(`https://api.exchangerate-api.com/v4/latest/${currency_one}`);
     res = await res.json();
     
+    
+
     const rate = res.rates[currency_two];
     rateEl.innerText = `1 ${currency_one} = ${rate} ${currency_two}`;
             
