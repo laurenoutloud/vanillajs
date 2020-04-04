@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tic Tac Toe</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Lacquer&display=swap');
+            *{
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: 'Lacquer', sans-serif;
+                background-color: lightyellow;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                min-height: 100vh;
+                padding: 10px;
+            }
+
+            .tictactoe-container {
+                border: 5px solid black;
+                width: 500px;
+                height: 500px;
+            }
+            .tictactoe-board {
+                height: 100%;
+                width: 100%;
+            }
+            
+            .row {
+                height: 33.33%;
+                width: 100%;
+            }
+
+            .box {
+                width: 33.33%;
+                font-size: 75px;
+                color: lightyellow;
+                background-color: pink;
+                text-align: center;
+            }
+
+            .box:hover {
+                cursor: pointer;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="tictactoe-container">
+            <table class="tictactoe-board">
+                <tr class="row">
+                    <td class="box" id="box"></td>
+                    <td class="box" id="box"></td>
+                    <td class="box" id="box"></td>
+                </tr>
+                <tr class="row">
+                    <td class="box" id="box"></td>
+                    <td class="box" id="box"></td>
+                    <td class="box" id="box"></td>
+                </tr>
+                <tr class="row">
+                    <td class="box" id="box"></td>
+                    <td class="box" id="box"></td>
+                    <td class="box" id="box"></td>
+                </tr>
+            </table>
+        </div>
+        <script>
+            const boxes = document.getElementsByClassName('box');
+            let player = 1;
+            function printBoxes(){
+                for (let i = 0; i < boxes.length; i++){
+                    box[i].addEventListener('click', ()=>{
+                        player ? box[i].innerText = 'X' : box[i].innerText = 'O';
+                        player = !player;
+                    });
+                }
+            }
+            printBoxes();
+        </script>
+    </body>
+
+
+</html>

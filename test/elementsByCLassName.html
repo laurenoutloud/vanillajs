@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="test" id="1">
+        <div class="test" id="1.1"></div>
+        <div class="test2" id="1.2"></div>
+    </div>
+    <div class="test2" id="2"></div>
+    <div class="test" id="3"></div>
+    <div class="test2" id="4"></div>
+    <script>
+        function getElementsByClass(className = 'test'){
+            let result = [];
+            let currentDiv = document.body;
+
+            function hasClass(currentDiv){
+                if (currentDiv.classList && currentDiv.classList.contains(className)){
+                    result.push(currentDiv);
+                }
+                if (currentDiv.hasChildNodes()){
+                    for (let i = 0; i < currentDiv.childNodes.length; i++){
+                        hasClass(currentDiv.childNodes[i]);
+                    }
+                }
+            }
+            hasClass(currentDiv);
+            console.log(result);
+        }
+        getElementsByClass();
+    </script>
+</body>
+</html>
